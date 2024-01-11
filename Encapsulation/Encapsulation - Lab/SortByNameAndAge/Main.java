@@ -1,7 +1,6 @@
 package SortByNameAndAge;
 
 import SortByNameAndAge.Person;
-
 import java.util.*;
 
 public class Main {
@@ -15,23 +14,14 @@ public class Main {
             Person person = new Person(input[0], input[1], Integer.parseInt(input[2]));
             people.add(person);
         }
-
         Collections.sort(people, (firstPerson, secondPerson) -> {
-            // В int-a връщаше 0, ако са равни!
             int sComp = firstPerson.getFirstName().compareTo(secondPerson.getFirstName());
-
             if (sComp != 0) {
                 return sComp;
             } else {
                 return Integer.compare(firstPerson.getAge(), secondPerson.getAge());
             }
         });
-
         people.forEach(e-> System.out.println(e.toString()));
-
-
-//                .sorted(e -> )
-
-
     }
 }
