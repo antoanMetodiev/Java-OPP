@@ -1,7 +1,8 @@
 package SortByNameAndAge;
 
-import SortByNameAndAge.Person;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -14,14 +15,14 @@ public class Main {
             Person person = new Person(input[0], input[1], Integer.parseInt(input[2]));
             people.add(person);
         }
-        Collections.sort(people, (firstPerson, secondPerson) -> {
-            int sComp = firstPerson.getFirstName().compareTo(secondPerson.getFirstName());
-            if (sComp != 0) {
-                return sComp;
+
+        people.stream().sorted((e1, e2) -> {
+            int result = e1.getFirstName().compareTo(e2.getFirstName());
+            if (result != 0) {
+                return result;
             } else {
-                return Integer.compare(firstPerson.getAge(), secondPerson.getAge());
+                return Integer.compare(e1.getAge(),e2.getAge());
             }
-        });
-        people.forEach(e-> System.out.println(e.toString()));
+        }).forEach(e -> System.out.println(e.toString()));
     }
 }
