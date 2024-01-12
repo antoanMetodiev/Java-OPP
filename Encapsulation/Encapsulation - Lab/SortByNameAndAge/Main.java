@@ -20,9 +20,8 @@ public class Main {
             int result = e1.getFirstName().compareTo(e2.getFirstName());
             if (result != 0) {
                 return result;
-            } else {
-                return Integer.compare(e1.getAge(),e2.getAge());
-            }
+            } 
+            return Integer.compare(e1.getAge(),e2.getAge());
         }).forEach(e -> System.out.println(e.toString()));
     }
 }
