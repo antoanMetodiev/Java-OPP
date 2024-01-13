@@ -1,10 +1,6 @@
 package ClassBoxDataValidation;
 
 public class Box {
-
-    // - length: double
-    //- width: double
-    //- height: double
     private double length;
     private double width;
     private double height;
