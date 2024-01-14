@@ -1,15 +1,6 @@
 package AnimalFarm;
 
 public class Chicken {
-    //- name: String
-    //- age: int
-    //+ Chicken(String, int)
-    //- setName(String) : void
-    //- setAge (int): void
-    //+ productPerDay (): double
-    //+ toString(): Override
-    //- calculateProductPerDay() : double
-
     private String name;
     private int age;
 
