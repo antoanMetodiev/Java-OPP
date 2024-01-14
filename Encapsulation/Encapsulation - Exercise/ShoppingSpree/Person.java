@@ -30,7 +30,7 @@ public class Person {
         return name;
     }
 
-    public List<Product> getProducts() { // tozi e po svoevolie
+    public List<Product> getProducts() { 
         return Collections.unmodifiableList(this.products);
     }
 
