@@ -3,12 +3,6 @@ package StackOfStrings;
 import java.util.ArrayList;
 
 public class StackOfStrings {
-
-    // ⦁	Private field: data: ArrayList<String>
-    //⦁	Public method: push(String item): void
-    //⦁	Public method: pop(): String
-    //⦁	Public method: peek(): String
-    //⦁	Public method: isEmpty(): boolean
     private ArrayList<String> data;
 
     public StackOfStrings() {
