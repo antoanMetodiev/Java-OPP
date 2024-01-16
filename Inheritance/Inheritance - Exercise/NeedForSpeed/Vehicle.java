@@ -1,16 +1,6 @@
 package NeedForSpeed;
 
 public class Vehicle {
-    // • DEFAULT_FUEL_CONSUMPTION – final static double (константа)
-    //• fuelConsumption – double
-    //• fuel – double
-    //• horsePower – int
-    //• Методи за връщане и задаване на стойностите на полетата
-    //• Публичен конструктор, който приема (fuel, horsePower)
-    // и задава стойността на полето fuelConsumption със стойността по подразбиране
-    //• void drive(double kilometers)
-
-
     private static final double DEFAULT_FUEL_CONSUMPTION = 1.25;
     private double fuelConsumption;
     private double fuel;
