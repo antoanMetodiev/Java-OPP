@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         String line = scanner.nextLine();
         while (!line.equals("Beast!")) {
 
@@ -14,9 +13,7 @@ public class Main {
             String name = animalData[0];
             int age = Integer.parseInt(animalData[1]);
             String gender = animalData[2];
-
             try {
-
                 switch (animal) {
                     case "Cat":
                         Cat cat = new Cat(name, age, gender);
