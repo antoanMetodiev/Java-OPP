@@ -1,7 +1,6 @@
 package animals;
 
 public class Animal {
-    // "{име} {възраст} {пол}".
     private String name;
     private int age;
     private String gender;
@@ -55,10 +54,7 @@ public class Animal {
         return String.format("%s\n" +
                         "%s %d %s\n" +
                         "%s"
-                , this.getClass().getSimpleName(),
-                this.name,
-                this.age,
-                this.gender,
+                , this.getClass().getSimpleName(),this.name, this.age,this.gender,
                 this.produceSound());
     }
 }
