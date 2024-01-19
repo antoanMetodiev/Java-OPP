@@ -3,11 +3,6 @@ package restaurant;
 import java.math.BigDecimal;
 
 public class Product {
-    //  Публичен конструктор със следните параметри: String name, BigDecimal price
-    //• name – String
-    //• price – BigDecimal
-    //• Getter методи за полетата
-
     private String name;
     private BigDecimal price;
 
