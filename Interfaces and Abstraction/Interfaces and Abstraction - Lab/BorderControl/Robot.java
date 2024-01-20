@@ -1,13 +1,6 @@
 package BorderControl;
 
 public class Robot implements Identifiable {
-
-    // - id: String
-    //- model: String
-    //+ Robot(String, String)
-    //+ getId(): String
-    //+ getModel(): String
-
     private String model;
     private String id;
 
