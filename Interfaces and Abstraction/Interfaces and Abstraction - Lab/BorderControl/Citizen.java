@@ -1,14 +1,6 @@
 package BorderControl;
 
 public class Citizen implements Identifiable {
-    // - name: String
-    //- age: int
-    //- id: String
-    //+ Citizen(String, int, String)
-    //+ getName(): String
-    //+ getAge(): int
-    //+ getId(): String
-
     private String name;
     private int age;
     private String id;
