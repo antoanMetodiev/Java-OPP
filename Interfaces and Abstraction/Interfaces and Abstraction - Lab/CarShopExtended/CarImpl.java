@@ -2,7 +2,7 @@ package CarShopExtended;
 
 import CarShop.Car;
 
-public class CarImpl implements CarShop.Car {
+public class CarImpl implements Car {
     private String model;
     private String color;
     private Integer horsePower;
