@@ -1,21 +1,6 @@
 package FoodShortage;
 
 public class Citizen implements Person, Identifiable, Buyer {
-
-    // name: String
-    //- age: int
-    //- id: String
-    //- birthDate: String
-    //- food: int
-
-    /// Оverride__>>
-    //+ Citizen(String, int, String, String)
-    //+ getName(): String
-    //+ getAge(): int
-    //+ getId(): String
-    //+ getFood(): int
-    //+ buyFood(): void
-
     private String name;
     private int age;
     private String id;
