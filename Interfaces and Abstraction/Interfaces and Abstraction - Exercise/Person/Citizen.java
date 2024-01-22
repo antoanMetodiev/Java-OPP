@@ -1,13 +1,6 @@
 package Person;
 
 public class Citizen implements Person {
-
-    // - name: String
-    //- age: int
-    //+ Citizen (String, int)
-    //+ getName() : String
-    //+ getAge() : int
-
     private String name;
     private int age;
 
