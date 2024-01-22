@@ -8,18 +8,15 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         List<Identifiable> enteringTheCity = new ArrayList<>();
-
         fillList(enteringTheCity, scanner);
         printInvalidId(enteringTheCity, scanner);
     }
 
     private static void printInvalidId(List<Identifiable> enteringTheCity, Scanner scanner) {
         String invalidId = scanner.nextLine();
-
         enteringTheCity.forEach(e -> {
 
             int startIndex = e.getId().length() - invalidId.length();
-
             String currentId = e.getId().substring(startIndex);
             if (currentId.equals(invalidId)) {
                 System.out.println(e.getId());
