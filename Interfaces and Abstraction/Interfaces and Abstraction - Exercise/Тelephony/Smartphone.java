@@ -5,13 +5,6 @@ import Тelephony.Callable;
 import java.util.List;
 
 public class Smartphone implements Callable, Browsable {
-
-    // - numbers: List<String>
-    //- urls: List<String>
-    //+ Smartphone(List<String>, List<String>)
-    //+ call(): String
-    //+ browse(): String
-
     private List<String> numbers; // phoneNumbers
     private List<String> urls;    // browseUrls
 
