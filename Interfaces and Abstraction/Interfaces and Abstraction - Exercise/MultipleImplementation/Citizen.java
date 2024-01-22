@@ -1,18 +1,6 @@
 package MultipleImplementation;
 
 public class Citizen implements Person, Birthable, Identifiable {
-
-    //- name: String
-    //- age: int
-    //- id: String
-    //- birthDate: String
-    //+ Citizen(String, int, String, String)
-    //+ getName(): String
-    //+ getAge(): int
-    //+ getId(): String
-    //+ getBirthDate(): String
-    //+ toString(): String
-
     private String name;
     private int age;
     private String id;
