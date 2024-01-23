@@ -7,5 +7,4 @@ public class Main {
         System.out.println(cat.explainSelf());
         System.out.println(dog.explainSelf());
     }
-
 }
