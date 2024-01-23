@@ -1,9 +1,6 @@
 package Animals;
 
 public abstract class Animal {
-    // ⦁	name: String
-    //⦁	favouriteFood: String
-
     private String name;
     private String favouriteFood;
 
@@ -20,8 +17,5 @@ public abstract class Animal {
         return favouriteFood;
     }
 
-    // explainSelf(): String.
-
     public abstract String explainSelf();
-
 }
