@@ -5,10 +5,5 @@ public class Main {
         System.out.println(MathOperation.add(1, 4));
         System.out.println(MathOperation.add(1, 4, 6));
         System.out.println(MathOperation.add(1, 4, 7, 8));
-
-
-
-
-
     }
 }
