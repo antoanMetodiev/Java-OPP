@@ -22,11 +22,6 @@ public class VehicleImpl implements Vehicle {
     }
 
     public void setFuelQuantity(double fuelQuantity) {
-//        if (fuelQuantity <= 0) {
-//            System.out.println("");
-//        } else {
-//            this.fuelQuantity = fuelQuantity;
-//        }\
         this.fuelQuantity = fuelQuantity;
     }
 
