@@ -3,8 +3,8 @@ import java.util.Scanner;
 public class NumberInRange {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
         String bounds = scanner.nextLine();
+        
         int startBound = Integer.parseInt(bounds.split(" ")[0]);
         int endBound = Integer.parseInt(bounds.split(" ")[1]);
         System.out.printf("Range: [%d...%d]\n", startBound, endBound);
