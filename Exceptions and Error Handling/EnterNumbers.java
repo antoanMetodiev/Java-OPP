@@ -9,11 +9,8 @@ public class EnterNumbers {
         List<Integer> validNumbers = new ArrayList<>();
         int validNumbersCounter = 0;
         int previousBigNumber = 1;
-        while (true) {
-            if (validNumbersCounter == 10) {
-                break;
-            }
-
+        while (validNumbersCounter != 10) {
+        
             String line = scanner.nextLine();
             try {
                 int number = Integer.parseInt(line);
