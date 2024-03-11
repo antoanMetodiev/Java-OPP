@@ -70,10 +70,6 @@ public abstract class BaseGameplay implements Gameplay {
 
     @Override
     public String toString() {
-        // "{gameplayName} {gameplayType}
-        //Team: {teamName1} {teamName2} (…) / Team: none
-        //Equipment: {equipmentsCount}, Protection: {allProtection}"
-
         StringBuilder result = new StringBuilder(String.format("%s %s", this.name,
                 this.getClass().getSimpleName()));
         result.append(System.lineSeparator());
