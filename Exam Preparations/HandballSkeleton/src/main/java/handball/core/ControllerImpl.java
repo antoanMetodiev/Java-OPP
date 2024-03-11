@@ -60,14 +60,12 @@ public class ControllerImpl implements Controller {
                 .findFirst().orElse(null);
 
         Equipment equipment1 = this.equipment.findByType(equipmentType);
-
+        
         if (gamePlay != null && equipment1 != null) {
-            // ⦁	"Successfully added {equpmentType} to {gameplayName}."
             gamePlay.addEquipment(equipment1);
             this.equipment.remove(equipment1);
             return String.format(ConstantMessages.SUCCESSFULLY_ADDED_EQUIPMENT_IN_GAMEPLAY, equipmentType, gameplayName);
         } else {
-            // "There isn't an equipment of type {equpmentType}."
             throw new NullPointerException(String.format(ExceptionMessages.NO_EQUIPMENT_FOUND, equipmentType));
         }
     }
@@ -85,7 +83,6 @@ public class ControllerImpl implements Controller {
             team = new Germany(teamName, country, advantage);
         }
 
-        // take a reference.
         Gameplay gameplay = this.gameplays.stream().filter(e -> e.getName().equals(gameplayName))
                 .findFirst().orElse(null);
 
@@ -93,7 +90,7 @@ public class ControllerImpl implements Controller {
             gameplay.addTeam(team);
             return String.format(ConstantMessages.SUCCESSFULLY_ADDED_TEAM_IN_GAMEPLAY, teamType, gameplayName);
         } else if (gameplay.getClass().getSimpleName().equals("Indoor") && team.getClass().getSimpleName().equals("Germany")) {
-
+            
             gameplay.addTeam(team);
             return String.format(ConstantMessages.SUCCESSFULLY_ADDED_TEAM_IN_GAMEPLAY, teamType, gameplayName);
         } else {
@@ -112,7 +109,6 @@ public class ControllerImpl implements Controller {
                 break;
             }
         }
-
         return String.format(ConstantMessages.TEAMS_PLAYED, teamCount);
     }
 
@@ -127,7 +123,6 @@ public class ControllerImpl implements Controller {
                 adv += (team.getAdvantage());
             }
         }
-
         return String.format(ConstantMessages.ADVANTAGE_GAMEPLAY, gameplayName, Integer.parseInt(String.valueOf(adv)));
     }
 

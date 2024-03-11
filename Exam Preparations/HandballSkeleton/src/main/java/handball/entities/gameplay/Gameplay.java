@@ -19,8 +19,6 @@ public interface Gameplay {
     Collection<Team> getTeam();
 
     Collection<Equipment> getEquipments();
-
+    
     String getName();
-
-
 }
