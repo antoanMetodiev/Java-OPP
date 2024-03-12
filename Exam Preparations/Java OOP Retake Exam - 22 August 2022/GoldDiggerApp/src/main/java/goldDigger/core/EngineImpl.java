@@ -16,8 +16,6 @@ public class EngineImpl implements Engine{
         this.reader = new BufferedReader(new InputStreamReader(System.in));
     }
 
-
-
     @Override
     public void run() {
         while (true) {
@@ -34,7 +32,6 @@ public class EngineImpl implements Engine{
 
             System.out.println(result);
         }
-
     }
 
     private String processInput() throws IOException {
@@ -65,7 +62,6 @@ public class EngineImpl implements Engine{
                 result = Command.Exit.name();
                 break;
         }
-
         return result;
     }
 
@@ -90,5 +86,4 @@ public class EngineImpl implements Engine{
     private String addDiscoverer(String[] data) {
         return controller.addDiscoverer(data[0], data[1]);
     }
-
 }
