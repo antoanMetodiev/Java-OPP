@@ -88,23 +88,22 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String getStatistics() {
-
         StringBuilder out = new StringBuilder();
         out.append(String.format(ConstantMessages.FINAL_SPOT_INSPECT, this.spotCount));
         out.append(System.lineSeparator());
         out.append(ConstantMessages.FINAL_DISCOVERER_INFO);
 
         Collection<Discoverer> discoverers = discovererRepository.getCollection();
-        for(Discoverer discoverer : discoverers){
+        for(Discoverer discoverer : discoverers) {
             out.append(System.lineSeparator());
             out.append(String.format(ConstantMessages.FINAL_DISCOVERER_NAME, discoverer.getName()));
             out.append(System.lineSeparator());
             out.append(String.format(ConstantMessages.FINAL_DISCOVERER_ENERGY, discoverer.getEnergy()));
             out.append(System.lineSeparator());
-            if(discoverer.getMuseum().getExhibits().isEmpty()){
+            if (discoverer.getMuseum().getExhibits().isEmpty()) {
                 out.append(String.format(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS, "None"));
 
-            }else{
+            } else {
                 out.append(String.format(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS,
                         String.join(ConstantMessages.FINAL_DISCOVERER_MUSEUM_EXHIBITS_DELIMITER, discoverer.getMuseum().getExhibits())));
             }
