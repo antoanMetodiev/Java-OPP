@@ -21,13 +21,11 @@ public class OperationImpl implements Operation {
                         break;
                     }
                 } else {
-                    // we break!
                     spotIsEmpty = true;
                     break;
                 }
             }
 
-            // Ако мястото от което те взимат експонати е вече празно.
             if (spotIsEmpty) {
                 break;
             }
