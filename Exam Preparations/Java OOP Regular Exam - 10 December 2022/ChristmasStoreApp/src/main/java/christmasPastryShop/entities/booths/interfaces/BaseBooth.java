@@ -29,7 +29,6 @@ public abstract class BaseBooth implements Booth {
 
     private void setCapacity(int capacity) {
         if (capacity <= 0) {
-            // "Capacity has to be greater than 0!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_TABLE_CAPACITY);
         }
         this.capacity = capacity;
@@ -37,7 +36,6 @@ public abstract class BaseBooth implements Booth {
 
     private void setNumberOfPeople(int numberOfPeople) {
         if (numberOfPeople <= 0) {
-            // "Cannot place zero or less people!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_NUMBER_OF_PEOPLE);
         }
         this.numberOfPeople = numberOfPeople;
