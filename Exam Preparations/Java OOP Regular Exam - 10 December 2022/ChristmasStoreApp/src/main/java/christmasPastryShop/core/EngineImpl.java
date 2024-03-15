@@ -25,7 +25,6 @@ public class EngineImpl implements Engine {
             String result = null;
             try {
                 result = processInput();
-
                 if (result.equals(Commands.END.name())) {
                     break;
                 }
@@ -33,10 +32,8 @@ public class EngineImpl implements Engine {
             } catch (IOException | IllegalArgumentException | NullPointerException e) {
                 result = e.getMessage();
             }
-
             this.writer.writeLine(result);
         }
-
     }
 
     private String processInput() throws IOException {
@@ -47,7 +44,6 @@ public class EngineImpl implements Engine {
         String[] data = Arrays.stream(tokens).skip(1).toArray(String[]::new);
 
         String result = null;
-
         switch (command) {
             case AddCocktail:
                 result = this.controller.addCocktail(
@@ -74,9 +70,6 @@ public class EngineImpl implements Engine {
                 result = Commands.END.name();
                 break;
         }
-
-
         return result.trim();
     }
-
 }

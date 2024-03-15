@@ -42,7 +42,6 @@ public class ControllerImpl implements Controller {
             delicacy = new Gingerbread(name, price);
             this.delicacyRepository.add(delicacy);
         }
-        // "Added delicacy {delicacy name} - {delicacy type} to the pastry shop!"
         return String.format(OutputMessages.DELICACY_ADDED, name, type);
     }
 
@@ -58,7 +57,6 @@ public class ControllerImpl implements Controller {
         } else if (type.equals("Hibernation")) {
             this.cocktailRepository.add(new Hibernation(name, size, brand));
         }
-        // "Added cocktail {cocktailName} - {cocktailBrand} to the pastry shop!”
         return String.format(OutputMessages.COCKTAIL_ADDED, name, brand);
     }
 
@@ -74,7 +72,6 @@ public class ControllerImpl implements Controller {
         } else if (type.equals("PrivateBooth")) {
             this.boothRepository.add(new PrivateBooth(boothNumber, capacity));
         }
-        // "Added booth number {boothNumber} in the pastry shop!"
         return String.format(OutputMessages.BOOTH_ADDED, boothNumber);
     }
 

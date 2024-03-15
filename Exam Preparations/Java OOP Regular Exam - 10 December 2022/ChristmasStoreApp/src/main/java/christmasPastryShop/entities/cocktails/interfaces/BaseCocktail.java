@@ -17,7 +17,6 @@ public abstract class BaseCocktail implements Cocktail {
 
     private void setName(String name) {
         if (name == null || name.trim().isEmpty()) {
-            // "Name cannot be null or white space!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_NAME);
         }
         this.name = name;
@@ -25,7 +24,6 @@ public abstract class BaseCocktail implements Cocktail {
 
     private void setSize(int size) {
         if (size <= 0) {
-            // "Size cannot be less or equal to zero!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_SIZE);
         }
         this.size = size;
@@ -33,7 +31,6 @@ public abstract class BaseCocktail implements Cocktail {
 
     private void setPrice(double price) {
         if (price <= 0) {
-            // "Price cannot be less or equal to zero!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_PRICE);
         }
         this.price = price;
@@ -41,7 +38,6 @@ public abstract class BaseCocktail implements Cocktail {
 
     private void setBrand(String brand) {
         if (brand == null || brand.trim().isEmpty()) {
-            // "Brand cannot be null or white space!"
             throw new IllegalArgumentException(ExceptionMessages.INVALID_BRAND);
         }
         this.brand = brand;
