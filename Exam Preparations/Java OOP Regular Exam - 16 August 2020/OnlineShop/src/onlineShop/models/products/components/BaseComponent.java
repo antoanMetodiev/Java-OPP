@@ -18,8 +18,6 @@ public abstract class BaseComponent extends BaseProduct implements Component {
 
     @Override
     public String toString() {
-        // "Overall Performance: {overall performance}. Price: {price} -
-        // {product type}: {manufacturer} {model} (Id: {id}) Generation: {generation}"
         return String.format(OutputMessages.PRODUCT_TO_STRING  + OutputMessages.COMPONENT_TO_STRING,
                 this.getOverallPerformance(), this.getPrice(), this.getClass().getSimpleName(), this.getManufacturer(),
                 this.getModel(), this.getId(), this.generation);
