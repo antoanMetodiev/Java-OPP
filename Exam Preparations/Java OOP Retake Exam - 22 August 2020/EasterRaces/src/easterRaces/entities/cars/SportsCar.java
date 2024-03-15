@@ -17,5 +17,4 @@ public class SportsCar extends BaseCar {
             throw new IllegalArgumentException(String.format(ExceptionMessages.INVALID_HORSE_POWER, horsePower));
         }
     }
-
 }
