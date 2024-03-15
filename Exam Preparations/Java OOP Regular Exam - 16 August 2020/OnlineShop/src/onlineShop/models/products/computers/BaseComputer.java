@@ -24,7 +24,6 @@ public abstract class BaseComputer extends BaseProduct implements Computer {
         if (this.components.isEmpty()) {
             return super.getOverallPerformance();
         }
-
         double averageOvPerformance = this.components.stream().mapToDouble(Component::getOverallPerformance)
                 .average().orElse(0);
 
@@ -40,7 +39,6 @@ public abstract class BaseComputer extends BaseProduct implements Computer {
     public double getPrice() {
         double componentsTotalSum = this.components.stream().mapToDouble(Component::getPrice).sum();
         double peripheralTotalSum = this.peripherals.stream().mapToDouble(Peripheral::getPrice).sum();
-
         return super.getPrice() + componentsTotalSum + peripheralTotalSum;
     }
 
@@ -65,7 +63,6 @@ public abstract class BaseComputer extends BaseProduct implements Computer {
     @Override
     public Component removeComponent(String componentType) {
         if (this.components.isEmpty()) {
-            // "Component {component type} does not exist in {computer type} with Id {id}."
             throw new IllegalArgumentException(String.format(ExceptionMessages.NOT_EXISTING_COMPONENT
                     , componentType, this.getClass().getSimpleName(), this.getId()));
         }
@@ -99,7 +96,6 @@ public abstract class BaseComputer extends BaseProduct implements Computer {
     @Override
     public Peripheral removePeripheral(String peripheralType) {
         if (this.components.isEmpty()) {
-            // "Component {component type} does not exist in {computer type} with Id {id}."
             throw new IllegalArgumentException(String.format(ExceptionMessages.NOT_EXISTING_PERIPHERAL
                     , peripheralType, this.getClass().getSimpleName(), this.getId()));
         }
@@ -123,11 +119,9 @@ public abstract class BaseComputer extends BaseProduct implements Computer {
                 this.getOverallPerformance(), this.getPrice(), this.getClass().getSimpleName(), this.getManufacturer(),
                 this.getModel(), this.getId()));
 
-        // Components!
         sb.append(String.format(OutputMessages.COMPUTER_COMPONENTS_TO_STRING, this.components.size()));
         this.components.forEach(e -> sb.append(e.getClass().getSimpleName()));
 
-        // Peripherals!
         double averageOvPerformance = this.peripherals.stream().mapToDouble(Peripheral::getOverallPerformance).average()
                 .orElse(0);
         sb.append(String.format(OutputMessages.COMPUTER_PERIPHERALS_TO_STRING, this.peripherals.size(), averageOvPerformance));
