@@ -37,7 +37,6 @@ public class ControllerImpl implements Controller {
         } else {
             throw new NullPointerException(ExceptionMessages.INVALID_FIELD_TYPE);
         }
-
         this.fields.add(field);
         return String.format(String.format(ConstantMessages.SUCCESSFULLY_ADDED_FIELD_TYPE, fieldType));
     }
@@ -53,7 +52,6 @@ public class ControllerImpl implements Controller {
         } else {
             throw new IllegalArgumentException(ExceptionMessages.INVALID_SUPPLEMENT_TYPE);
         }
-
         this.supplement.add(currentSupplement);
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SUPPLEMENT_TYPE, type);
     }
@@ -66,7 +64,6 @@ public class ControllerImpl implements Controller {
         if (receivedSupplement == null) {
             throw new IllegalArgumentException(String.format(ExceptionMessages.NO_SUPPLEMENT_FOUND, supplementType));
         }
-
         this.supplement.remove(receivedSupplement);
         field.addSupplement(receivedSupplement);
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_SUPPLEMENT_IN_FIELD, supplementType, fieldName);
