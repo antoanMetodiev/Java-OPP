@@ -58,12 +58,6 @@ public abstract class BaseField implements Field {
 
     @Override
     public String getInfo() {
-
-        // "{fieldName} ({fieldType}):
-        // Player: {playerName1} {playerName2} {playerName3} (…) / Player: none
-        // Supplement: {supplementsCount}
-        // Energy: {sumEnergy}"
-
         StringBuilder sb = new StringBuilder(String.format("%s (%s):", this.name, this.getClass().getSimpleName()));
         sb.append(System.lineSeparator());
 
@@ -77,7 +71,6 @@ public abstract class BaseField implements Field {
 
         sb.append("Supplement: ").append(this.supplements.size()).append(System.lineSeparator());
         sb.append("Energy: ").append(this.sumEnergy()).append(System.lineSeparator());
-
         return sb.toString();
     }
 
