@@ -88,17 +88,14 @@ public class EngineImpl implements Engine {
     }
 
     private String dragPlayer(String[] data) {
-        //TODO
         return this.controller.dragPlayer(data[0]);
     }
 
     private String calculateStrength(String[] data) {
-        //TODO
         return this.controller.calculateStrength(data[0]);
     }
 
     private String getStatistics() {
-        //TODO
         return this.controller.getStatistics();
     }
 }
