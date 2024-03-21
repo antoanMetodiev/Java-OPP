@@ -15,8 +15,6 @@ public class EngineImpl implements Engine{
         this.scanner = new Scanner(System.in);
     }
 
-
-
     @Override
     public void run() {
         while (true) {
@@ -30,7 +28,6 @@ public class EngineImpl implements Engine{
             } catch (NullPointerException | IllegalArgumentException | IOException e) {
                 result = e.getMessage();
             }
-
             System.out.println(result);
         }
     }
@@ -63,12 +60,10 @@ public class EngineImpl implements Engine{
                 result = Command.Exit.name();
                 break;
         }
-
         return result;
     }
 
     private String addClimber(String[] data) {
-        //TODO
         return this.controller.addClimber(data[0], data[1]);
     }
 
@@ -78,19 +73,13 @@ public class EngineImpl implements Engine{
         return controller.addMountain(mountainName, peak);
     }
     private String removeClimber(String[] data) {
-        //TODO
         return this.controller.removeClimber(data[0]);
     }
 
     private String startClimbing(String[] data) {
-        //TODO
         return this.controller.startClimbing(data[0]);
     }
     private String getStatistics() {
-        //TODO
         return this.controller.getStatistics();
     }
-
-
-
 }
