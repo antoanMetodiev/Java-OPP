@@ -1,7 +1,6 @@
 package bank.core;
 
 public interface Controller {
-
     String addBank(String type, String name);
     String addLoan(String type);
     String returnedLoan(String bankName, String loanType);
