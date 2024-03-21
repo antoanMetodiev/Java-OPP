@@ -94,7 +94,6 @@ public class ControllerImpl implements Controller {
                 sb.append(String.format(ConstantMessages.FINAL_CLIMBER_PEAKS, String.join(", ", climber.getRoster().getPeaks())));
             }
         }
-
         return sb.toString().trim();
     }
 }
