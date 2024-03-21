@@ -11,6 +11,5 @@ public interface Climber {
 
     Roster getRoster();
 
-
     void climb();
 }
