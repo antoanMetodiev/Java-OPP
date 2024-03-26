@@ -69,14 +69,9 @@ public abstract class BaseBank implements Bank {
 
     @Override
     public String getStatistics() {
-//        "Name: {bankName}, Type: {bankType}
-//        Clients: {clientName1}, {clientName2} ... / Clients: none
-//        Loans: {loansCount}, Sum of interest rates: {sumOfInterestRates}"
-
         StringBuilder sb = new StringBuilder(String.format("Name: %s, Type: %s"
                 , this.name, this.getClass().getSimpleName())).append(System.lineSeparator());
-
-        // add Clients:
+        
         sb.append("Clients: ");
         if (this.clients.isEmpty()) {
             sb.append("none").append(System.lineSeparator());
@@ -85,12 +80,10 @@ public abstract class BaseBank implements Bank {
                     .collect(Collectors.joining(", ")));
             sb.append(System.lineSeparator());
         }
-
         sb.append(String.format("Loans: %d, Sum of interest rates: %d"
                 , this.loans.size(), this.sumOfInterestRates()));
 
         sb.append((System.lineSeparator()));
-
         return sb.toString();
     }
 }

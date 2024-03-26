@@ -76,5 +76,4 @@ public class Bank {
         String names = this.clients.stream().map(Client::getName).collect(Collectors.joining(", "));
         return String.format("The client %s is at the %s bank!", names, this.name);
     }
-
 }

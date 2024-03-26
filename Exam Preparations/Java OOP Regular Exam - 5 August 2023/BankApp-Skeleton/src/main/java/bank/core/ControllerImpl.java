@@ -57,7 +57,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String returnedLoan(String bankName, String loanType) {
-        // that is reference from banks property!
         Bank bank = this.banks.stream().filter(e -> e.getName()
                 .equals(bankName)).findFirst().orElse(null);
 
@@ -65,17 +64,13 @@ public class ControllerImpl implements Controller {
         if (receivedLoan == null) {
             throw new IllegalArgumentException(String.format(ExceptionMessages.NO_LOAN_FOUND, loanType));
         }
-
         this.loans.removeLoan(receivedLoan);
-        // towa otdoly nqma nujda da se validira!
         bank.addLoan(receivedLoan);
-
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_CLIENT_OR_LOAN_TO_BANK, loanType, bankName);
     }
 
     @Override
     public String addClient(String bankName, String clientType, String clientName, String clientID, double income) {
-        // that is reference from banks property!
         Bank bank = this.banks.stream().filter(e -> e.getName()
                 .equals(bankName)).findFirst().orElse(null);
 
@@ -95,7 +90,6 @@ public class ControllerImpl implements Controller {
         } else {
             return ConstantMessages.UNSUITABLE_BANK;
         }
-
         return String.format(ConstantMessages.SUCCESSFULLY_ADDED_CLIENT_OR_LOAN_TO_BANK, clientType, bankName);
     }
 
@@ -106,7 +100,6 @@ public class ControllerImpl implements Controller {
 
         double incomeTotalSum = bank.getClients().stream().mapToDouble(Client::getIncome).sum();
         double amountsTotalSum = bank.getLoans().stream().mapToDouble(Loan::getAmount).sum();
-
         return String.format(ConstantMessages.FUNDS_BANK, bankName, incomeTotalSum + amountsTotalSum);
     }
 

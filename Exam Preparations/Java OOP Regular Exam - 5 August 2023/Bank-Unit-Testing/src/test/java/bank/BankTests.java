@@ -46,7 +46,6 @@ public class BankTests {
         int initialSize = bank.getCount();
         bank.addClient(new Client("Random Name"));
         int sizeAfterAddedEl = bank.getCount();
-
         Assert.assertEquals(initialSize + 1, sizeAfterAddedEl);
     }
 
