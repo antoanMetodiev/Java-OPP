@@ -7,7 +7,6 @@ import org.junit.Test;
 import java.util.List;
 
 public class PetStoreTests {
-
     private PetStore petStore;
 
     @Before
@@ -45,7 +44,6 @@ public class PetStoreTests {
     @Test
     public void test_GetTheMostExpensiveAnimal_ShouldWorkCorrect() {
         Animal mostExpensiveAnimal = new Animal("Random Specie2", 12345, 3);
-
         this.petStore.addAnimal(new Animal("Random Specie1", 1234, 1));
         this.petStore.addAnimal(new Animal("Random Specie2", 12345, 2));
         this.petStore.addAnimal(mostExpensiveAnimal);
@@ -61,7 +59,6 @@ public class PetStoreTests {
         this.petStore.addAnimal(new Animal(EXPECTED_SPECIE, 2, 2));
 
         List<Animal> allAnimalBySpecie = this.petStore.findAllAnimalBySpecie(EXPECTED_SPECIE);
-
         int EXPECTED_SIZE = this.petStore.getCount();
         Assert.assertEquals(this.petStore.getAnimals().size(), EXPECTED_SIZE);
 
@@ -72,7 +69,6 @@ public class PetStoreTests {
                 break;
             }
         }
-
         Assert.assertTrue(flag);
     }
 }
