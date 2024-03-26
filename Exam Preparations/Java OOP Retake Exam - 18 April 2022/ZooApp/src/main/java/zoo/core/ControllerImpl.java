@@ -61,7 +61,6 @@ public class ControllerImpl implements Controller {
         Area area = this.findByAreaName(areaName);
         Food food = this.foodRepository.findByType(foodType);
         if (food == null) {
-            // ⦁	"There isn't a food of type {foodType}."
             throw new IllegalArgumentException(String.format(ExceptionMessages.NO_FOOD_FOUND, foodType));
         }
 
@@ -83,10 +82,10 @@ public class ControllerImpl implements Controller {
         }
 
         if (animalType.equals("AquaticAnimal") && area.getClass().getSimpleName().equals("WaterArea")) {
-            area.addAnimal(animal); // the check is inside in implementation!
+            area.addAnimal(animal); 
             return String.format(ConstantMessages.SUCCESSFULLY_ADDED_ANIMAL_IN_AREA, animalType, areaName);
         } else if (animalType.equals("TerrestrialAnimal") && area.getClass().getSimpleName().equals("LandArea")) {
-            area.addAnimal(animal); // the check is inside in implementation!
+            area.addAnimal(animal);
             return String.format(ConstantMessages.SUCCESSFULLY_ADDED_ANIMAL_IN_AREA, animalType, areaName);
         }
         return ConstantMessages.AREA_NOT_SUITABLE;
