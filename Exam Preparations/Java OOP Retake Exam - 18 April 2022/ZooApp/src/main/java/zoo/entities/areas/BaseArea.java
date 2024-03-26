@@ -85,7 +85,6 @@ public abstract class BaseArea implements Area {
         }
         result.append("Foods: ").append(this.foods.size()).append(System.lineSeparator());
         result.append("Calories: ").append(this.sumCalories()).append(System.lineSeparator());
-
         return result.toString();
     }
 }
