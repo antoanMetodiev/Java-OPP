@@ -29,7 +29,6 @@ public class EngineImpl implements Engine {
             } catch (NullPointerException | IllegalArgumentException | IOException e) {
                 result = e.getMessage();
             }
-
             System.out.println(result);
         }
     }
@@ -66,27 +65,22 @@ public class EngineImpl implements Engine {
     }
 
     private String addWorker(String[] data) {
-        //TODO
         return this.controller.addWorker(data[0], data[1]);
     }
 
     private String addVehicle(String[] data) {
-        //TODO
         return this.controller.addVehicle(data[0], Integer.parseInt(data[1]));
     }
 
     private String addToolToWorker(String[] data) {
-        //TODO
         return this.controller.addToolToWorker(data[0], Integer.parseInt(data[1]));
     }
 
     private String statistics() {
-        //TODO
         return this.controller.statistics();
     }
 
     private String makingVehicle(String[] data) {
-        //TODO
         return this.controller.makingVehicle(data[0]);
     }
 }

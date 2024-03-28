@@ -63,13 +63,11 @@ public class ControllerImpl implements Controller {
         Shop shop = new ShopImpl();
         Vehicle vehicle = this.vehicles.findByName(vehicleName);
 
-        // 1во - Взимаме си само подходящите worker-й за операцията (тези които са със strength над 70)
         List<Worker> goodWorkers = returnWorkersWithStrengthAbove70();
         if (goodWorkers.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessages.NO_WORKER_READY);
         }
 
-        // 2ро - Започват да работят:
         for (Worker worker : goodWorkers) {
             shop.make(vehicle, worker);
             if (vehicle.reached()) {
@@ -77,10 +75,7 @@ public class ControllerImpl implements Controller {
             }
         }
 
-        // 3то - Намираме колко инструменти са станали вече неподходящи (изхабени със сила равна на 0)
         int unfitToolsCount = returnUnfitToolsCount(goodWorkers);
-
-        // 4то - Проверяваме дали превозното средство е ЗАВЪРШЕНО!
         String message = "";
         if (vehicle.reached()) {
             message = "done";
