@@ -15,7 +15,6 @@ public class DivingSiteRepository implements Repository<DivingSite> {
 
     @Override
     public Collection<DivingSite> getCollection() {
-//        return Collections.unmodifiableCollection(this.sites);
         return this.sites;
     }
 
