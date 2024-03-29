@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarShop {
-
     private List<Car> cars;
 
     public CarShop() {
@@ -22,16 +21,13 @@ public class CarShop {
     }
 
     public List<Car> findAllCarsWithMaxHorsePower(int horsePower) {
-        List<Car> cars = this.cars.stream().filter(c -> c.getHorsePower() > horsePower).collect(Collectors.toList());
-
-        return cars;
+        return this.cars.stream().filter(c -> c.getHorsePower() > horsePower).collect(Collectors.toList());
     }
 
     public void add(Car car) {
         if (car == null) {
             throw new NullPointerException("Car cannot be null.");
         }
-
         this.cars.add(car);
     }
 
@@ -39,22 +35,12 @@ public class CarShop {
         return this.cars.remove(car);
     }
 
-
     public Car getTheMostLuxuryCar() {
-        Car car = this
-                .cars
-                .stream()
-                .sorted((c1, c2) -> Double.compare(c2.getPrice(), c1.getPrice()))
-                .limit(1)
-                .findFirst()
-                .orElse(null);
-
-        return car;
+        return this.cars.stream().sorted((c1, c2) -> Double.compare(c2.getPrice(), c1.getPrice()))
+            .limit(1).findFirst().orElse(null);;
     }
 
     public List<Car> findAllCarByModel(String model) {
-        List<Car> cars = this.cars.stream().filter(c -> c.getModel().equals(model)).collect(Collectors.toList());
-
-        return cars;
+        return this.cars.stream().filter(c -> c.getModel().equals(model)).collect(Collectors.toList());
     }
 }

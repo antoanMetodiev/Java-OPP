@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class CarShopTests {
-
     private CarShop carShop;
 
     @Before
@@ -85,4 +84,3 @@ public class CarShopTests {
         Assert.assertEquals(receivedCars.size(), 2);
     }
 }
-
