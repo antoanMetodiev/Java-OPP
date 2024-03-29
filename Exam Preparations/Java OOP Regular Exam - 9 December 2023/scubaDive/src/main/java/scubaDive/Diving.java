@@ -43,7 +43,6 @@ public class Diving {
         if (diverExist) {
             throw new IllegalArgumentException(String.format(DIVER_EXIST, diver.getName()));
         }
-
         this.divers.add(diver);
     }
 
@@ -53,9 +52,8 @@ public class Diving {
                 .filter(a -> a.getName().equals(diverName))
                 .findFirst()
                 .orElse(null);
-
-        boolean isRemove = this.divers.remove(diver);
-        return isRemove;
+        
+        return this.divers.remove(diver);
     }
 
     private void setCapacity(int capacity) {
