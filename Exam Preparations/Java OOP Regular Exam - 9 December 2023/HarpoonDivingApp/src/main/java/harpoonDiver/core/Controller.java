@@ -10,5 +10,4 @@ public interface Controller {
     String startDiving(String siteName);
 
     String getStatistics();
-
 }

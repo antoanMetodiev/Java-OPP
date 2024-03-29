@@ -72,25 +72,19 @@ public class ControllerImpl implements Controller {
         DivingSite divingPlace = this.divingSiteRepository.byName(siteName);
         DivingImpl diving = new DivingImpl();
 
-        // Избираме само гмургачи с над 30 oxygen!
         List<Diver> worthyDivers = this.diverRepository.getCollection().stream()
                 .filter(e -> e.getOxygen() > 30).collect(Collectors.toList());
 
         if (worthyDivers.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessages.SITE_DIVERS_DOES_NOT_EXISTS);
         }
-
-        // Самото гмуркане и търсене на създания!
         diving.searching(divingPlace, worthyDivers);
         divedPlaces++;
 
-        // Divers, които са на 0 oxygen!
         int removedDiversCount = getAllDiversCountWithZeroOxygen(worthyDivers);
-
         return String.format(ConstantMessages.SITE_DIVING, siteName, removedDiversCount);
     }
 
-    // A tozi metod moje da ne bachka v judge, zaradi .count() ,maybe!
     private int getAllDiversCountWithZeroOxygen(List<Diver> worthyDivers) {
         return (int) worthyDivers.stream().filter(e -> !e.canDive()).count();
     }
@@ -99,13 +93,12 @@ public class ControllerImpl implements Controller {
     public String getStatistics() {
         StringBuilder result = new StringBuilder(String.format(ConstantMessages.FINAL_DIVING_SITES
                 , divedPlaces)).append(System.lineSeparator());
-
         result.append(ConstantMessages.FINAL_DIVERS_STATISTICS).append(System.lineSeparator());
+        
         for (Diver diver : this.diverRepository.getCollection()) {
-
             result.append(String.format(ConstantMessages.FINAL_DIVER_NAME, diver.getName())).append(System.lineSeparator());
             result.append(String.format(ConstantMessages.FINAL_DIVER_OXYGEN, diver.getOxygen())).append(System.lineSeparator());
-
+            
             String message = "";
             if (diver.getSeaCatch().getSeaCreatures().isEmpty()) {
                 message = "None";
@@ -114,7 +107,6 @@ public class ControllerImpl implements Controller {
             }
             result.append(String.format(ConstantMessages.FINAL_DIVER_CATCH, message)).append(System.lineSeparator());
         }
-
         return result.toString().trim();
     }
 }

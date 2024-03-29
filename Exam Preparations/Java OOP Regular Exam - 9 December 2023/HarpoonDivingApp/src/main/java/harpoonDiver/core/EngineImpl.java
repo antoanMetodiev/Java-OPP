@@ -17,8 +17,6 @@ public class EngineImpl implements Engine{
         this.scanner = new Scanner(System.in);
     }
 
-
-
     @Override
     public void run() {
         while (true) {
@@ -32,10 +30,8 @@ public class EngineImpl implements Engine{
             } catch (NullPointerException | IllegalArgumentException | IOException e) {
                 result = e.getMessage();
             }
-
             System.out.println(result);
         }
-
     }
 
     private String processInput() throws IOException {
@@ -66,33 +62,28 @@ public class EngineImpl implements Engine{
                 result = Command.Exit.name();
                 break;
         }
-
         return result;
     }
 
-
     private String addDiver(String[] data) {
-        // TODO
         return this.controller.addDiver(data[0], data[1]);
     }
+    
     private String addDivingSite(String[] data) {
-        // TODO
         String siteName = data[0];
         String[] seaCreature = Arrays.stream(data).skip(1).toArray(String[]::new);
         return this.controller.addDivingSite(siteName, seaCreature);
     }
+    
     private String removeDiver(String[] data) {
-        // TODO
         return this.controller.removeDiver(data[0]);
     }
 
-
     private String startDiving(String[] data) {
-        // TODO
         return this.controller.startDiving(data[0]);
     }
+    
     private String getStatistics() {
-        // TODO
         return this.controller.getStatistics();
     }
 }

@@ -15,7 +15,6 @@ public class DiverRepository implements Repository<Diver> {
 
     @Override
     public Collection<Diver> getCollection() {
-//        return Collections.unmodifiableCollection(this.divers);
         return this.divers;
     }
 
