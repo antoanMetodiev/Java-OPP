@@ -57,7 +57,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String supplementForService(String serviceName, String supplementType) {
-        // TODO: провери дали казаха че servicenName винаги ще е валидно име на съществуващ елемент в serviceCollection!
         Service service = this.serviceCollection.stream()
                 .filter(e -> e.getName().equals(serviceName)).findFirst().orElse(null);
 
@@ -73,7 +72,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addRobot(String serviceName, String robotType, String robotName, String robotKind, double price) {
-        // TODO: провери дали казаха че servicenName винаги ще е валидно име на съществуващ елемент в serviceCollection!
         Service service = this.serviceCollection.stream()
                 .filter(e -> e.getName().equals(serviceName)).findFirst().orElse(null);
 
@@ -119,7 +117,6 @@ public class ControllerImpl implements Controller {
 
         double price = service.getRobots().stream().mapToDouble(Robot::getPrice).sum();
         price += service.getSupplements().stream().mapToDouble(Supplement::getPrice).sum();
-
         return String.format(ConstantMessages.VALUE_SERVICE, serviceName, price);
     }
 
@@ -127,8 +124,6 @@ public class ControllerImpl implements Controller {
     public String getStatistics() {
         StringBuilder sb = new StringBuilder();
         this.serviceCollection.forEach(e -> sb.append(e.getStatistics()));
-
         return sb.toString().trim();
     }
 }
-
