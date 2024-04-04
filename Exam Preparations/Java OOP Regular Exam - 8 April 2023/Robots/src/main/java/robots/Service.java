@@ -65,11 +65,11 @@ public class Service {
                 .filter(f -> name.equals(f.getName()))
                 .findAny()
                 .orElse(null);
+        
         if (robot == null){
             throw new IllegalArgumentException(String.format("Robot with name %s doesn't exist!", name));
         }
         robot.setReadyForSale(false);
-
         return robot;
     }
 
@@ -77,5 +77,4 @@ public class Service {
         String names = this.robot.stream().map(Robot::getName).collect(Collectors.joining(", "));
         return String.format("The robot %s is in the service %s!", names, this.name);
     }
-
 }

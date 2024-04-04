@@ -82,5 +82,4 @@ public class ServiceTests {
         String EXPECTED_TEXT = "The robot Sashko is in the service Lilyan!";
         Assert.assertEquals(EXPECTED_TEXT, this.service.report());
     }
-
 }
