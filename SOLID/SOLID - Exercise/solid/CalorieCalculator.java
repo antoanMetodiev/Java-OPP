@@ -7,12 +7,8 @@ import solid.products.Lemonade;
 import java.util.List;
 
 public class CalorieCalculator {
-
     private static final String SUM = "Sum: %f";
     private static final String AVERAGE = "Average: %f";
-
-    public CalorieCalculator() {
-    }
 
     public double sum(List<Object> products) {
         double sum = 0;
@@ -32,7 +28,6 @@ public class CalorieCalculator {
                 sum += (Chocolate.CALORIES_PER_100_GRAMS / 100) * ((Chocolate) product).getGrams();
             }
         }
-
         return sum;
     }
 
