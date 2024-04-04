@@ -1,10 +1,8 @@
 package robotService.entities.supplements;
 
-public class PlasticArmor extends BaseSupplement {
-    private static final int HARDNESS = 1;
-    private static final double PRICE = 10;
+public class PlasticArmor extends BaseSupplement{
 
     public PlasticArmor() {
-        super(HARDNESS, PRICE);
+        super(1, 10);
     }
 }

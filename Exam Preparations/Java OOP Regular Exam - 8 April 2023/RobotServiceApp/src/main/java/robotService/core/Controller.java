@@ -1,5 +1,7 @@
 package robotService.core;
 
+import robotService.entities.services.Service;
+
 public interface Controller {
     String addService(String type, String name);
     String addSupplement(String type);

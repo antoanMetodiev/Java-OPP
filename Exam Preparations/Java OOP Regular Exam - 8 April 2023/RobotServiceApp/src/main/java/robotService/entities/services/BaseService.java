@@ -7,6 +7,7 @@ import robotService.entities.supplements.Supplement;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.stream.Collectors;
 
 public abstract class BaseService implements Service {
     private String name;
@@ -74,19 +75,20 @@ public abstract class BaseService implements Service {
 
     @Override
     public String getStatistics() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder(String.format("%s %s:", this.name, this.getClass().getSimpleName()))
+                .append(System.lineSeparator());
 
-        sb.append(String.format("%s %s", this.getName(), this.getClass().getSimpleName()));
-        sb.append("Robots:");
+        sb.append("Robots: ");
         if (this.robots.isEmpty()) {
-            sb.append(" none").append(System.lineSeparator());
+            sb.append("none").append(System.lineSeparator());
         } else {
-            this.robots.forEach(e -> sb.append(" ").append(e.getName()));
-            sb.append(System.lineSeparator());
+            sb.append(String.join(" ", this.robots.stream().map(Robot::getName).collect(Collectors.toList())))
+                    .append(System.lineSeparator());
         }
 
-        sb.append("Supplements: ").append(this.supplements.size());
-        sb.append("Hardness: ").append(this.sumHardness());
+        sb.append(String.format("Supplements: %d ", this.supplements.size()));
+        sb.append(String.format("Hardness: %d", sumHardness())).append(System.lineSeparator());
+
         return sb.toString();
     }
 }
