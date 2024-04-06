@@ -15,7 +15,6 @@ public class EngineImpl implements Engine {
         this.scanner = new Scanner(System.in);
     }
 
-
     @Override
     public void run() {
         while (true) {
@@ -65,13 +64,10 @@ public class EngineImpl implements Engine {
                 result = Command.Exit.name();
                 break;
         }
-
         return result;
     }
 
-
     private String addWaiter(String[] data) {
-        //TODO
         return this.controller.addWaiter(data[0], data[1]);
     }
 
@@ -82,22 +78,18 @@ public class EngineImpl implements Engine {
     }
 
     private String removeWaiter(String[] data) {
-        //TODO
         return this.controller.removeWaiter(data[0]);
     }
 
     private String removeClient(String[] data) {
-        //TODO
         return this.controller.removeClient(data[0]);
     }
 
     private String startWorking(String[] data) {
-        //TODO
         return this.controller.startWorking(data[0]);
     }
 
     private String getStatistics() {
-        //TODO
         return this.controller.getStatistics();
     }
 }
