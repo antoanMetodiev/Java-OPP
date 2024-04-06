@@ -1,6 +1,5 @@
 package restaurant.models.waiter;
 
-//TODO
 public class HalfTimeWaiter extends BaseWaiter {
 
     public HalfTimeWaiter(String name) {
