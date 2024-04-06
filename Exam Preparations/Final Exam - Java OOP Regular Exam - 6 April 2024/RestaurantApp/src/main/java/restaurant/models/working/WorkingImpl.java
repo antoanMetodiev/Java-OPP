@@ -2,7 +2,6 @@ package restaurant.models.working;
 
 import restaurant.models.client.Client;
 import restaurant.models.waiter.Waiter;
-
 import java.util.Collection;
 
 public class WorkingImpl implements Working{
