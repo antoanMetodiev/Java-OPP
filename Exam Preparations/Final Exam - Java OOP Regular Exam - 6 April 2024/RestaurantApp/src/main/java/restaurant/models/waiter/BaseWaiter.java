@@ -4,7 +4,6 @@ import restaurant.common.ExceptionMessages;
 import restaurant.models.orders.TakenOrders;
 import restaurant.models.orders.TakenOrdersImpl;
 
-//TODO
 public abstract class BaseWaiter implements Waiter {
     private String name;
     private int efficiency;
