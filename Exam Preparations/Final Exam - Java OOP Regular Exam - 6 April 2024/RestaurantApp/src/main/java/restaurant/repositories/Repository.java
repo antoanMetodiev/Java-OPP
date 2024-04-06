@@ -3,7 +3,6 @@ package restaurant.repositories;
 import java.util.Collection;
 
 public interface Repository<T> {
-
     Collection<T> getCollection();
 
     void add(T entity);
