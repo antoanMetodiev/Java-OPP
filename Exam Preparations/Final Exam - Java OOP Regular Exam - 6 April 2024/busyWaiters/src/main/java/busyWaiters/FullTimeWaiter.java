@@ -1,11 +1,8 @@
 package busyWaiters;
 
-
 public class FullTimeWaiter {
-
     private final String name;
     private final int efficiency;
-
 
     public FullTimeWaiter(String name, int efficiency) {
         this.name = name;
@@ -13,10 +10,10 @@ public class FullTimeWaiter {
     }
 
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public int getEfficiency() {
-        return efficiency;
+        return this.efficiency;
     }
 }
