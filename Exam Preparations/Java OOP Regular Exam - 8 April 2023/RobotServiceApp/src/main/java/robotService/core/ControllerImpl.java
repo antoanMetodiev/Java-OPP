@@ -57,9 +57,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String supplementForService(String serviceName, String supplementType) {
-        Service service = this.serviceCollection.stream()
-                .filter(e -> e.getName().equals(serviceName)).findFirst().orElse(null);
-
+        Service service = findFirst(serviceName);
         Supplement suplement = this.supplementRepository.findFirst(supplementType);
         if (suplement == null) {
             throw new IllegalArgumentException(String.format(ExceptionMessages.NO_SUPPLEMENT_FOUND, supplementType));
@@ -72,8 +70,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String addRobot(String serviceName, String robotType, String robotName, String robotKind, double price) {
-        Service service = this.serviceCollection.stream()
-                .filter(e -> e.getName().equals(serviceName)).findFirst().orElse(null);
+        Service service = findFirst(serviceName);
 
         Robot robot = null;
         if (robotType.equals("MaleRobot")) {
@@ -99,8 +96,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String feedingRobot(String serviceName) {
-        Service service = this.serviceCollection.stream()
-                .filter(e -> e.getName().equals(serviceName)).findFirst().orElse(null);
+        Service service = findFirst(serviceName);
 
         int count = 0;
         if (service != null) {
@@ -112,12 +108,15 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String sumOfAll(String serviceName) {
-        Service service = this.serviceCollection.stream().filter(e -> e.getName().equals(serviceName))
-                .findFirst().orElse(null);
-
+        Service service = findFirst(serviceName);
         double price = service.getRobots().stream().mapToDouble(Robot::getPrice).sum();
         price += service.getSupplements().stream().mapToDouble(Supplement::getPrice).sum();
         return String.format(ConstantMessages.VALUE_SERVICE, serviceName, price);
+    }
+
+    private Service findFirst(String name) {
+        return this.serviceCollection.stream().filter(e -> e.getName().equals(name))
+                .findFirst().orElse(null);
     }
 
     @Override
