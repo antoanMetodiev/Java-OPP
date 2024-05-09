@@ -12,6 +12,4 @@ public interface Controller {
     String startWorking(String clientName);
 
     String getStatistics();
-
-
 }

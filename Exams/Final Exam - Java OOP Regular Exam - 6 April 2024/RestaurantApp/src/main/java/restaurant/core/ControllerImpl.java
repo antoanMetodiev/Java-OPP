@@ -50,7 +50,6 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String removeWaiter(String waiterName) {
-        // TODO: този boolean може и да гръмне
         boolean isRemoved = this.waiterRepository.remove(this.waiterRepository.byName(waiterName));
         if (!isRemoved) {
             throw new IllegalArgumentException(String.format(ExceptionMessages.WAITER_DOES_NOT_EXIST, waiterName));
@@ -70,8 +69,7 @@ public class ControllerImpl implements Controller {
 
     @Override
     public String startWorking(String clientName) {
-        Client client = this.clientRepository.byName(clientName); // на него ще му приемаме поръчките
-
+        Client client = this.clientRepository.byName(clientName); 
         Collection<Waiter> allWaiters = this.waiterRepository.getCollection();
         if (allWaiters.isEmpty()) {
             throw new IllegalArgumentException(ExceptionMessages.THERE_ARE_NO_WAITERS);
@@ -95,14 +93,12 @@ public class ControllerImpl implements Controller {
             sb.append(String.format(ConstantMessages.FINAL_WAITER_EFFICIENCY, waiter.getEfficiency()))
                     .append(System.lineSeparator());
 
-
             String message = "";
             if (waiter.takenOrders().getOrdersList().isEmpty()) {
                 message = "None";
             } else {
                 message = String.join(ConstantMessages.FINAL_WAITER_ORDERS_DELIMITER, waiter.takenOrders().getOrdersList());
             }
-
             sb.append(String.format(ConstantMessages.FINAL_WAITER_ORDERS, message)).append(System.lineSeparator());
         }
         return sb.toString().trim();
